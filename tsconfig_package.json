@@ -1,0 +1,12 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "declaration": true,
+        "newLine": "lf",
+        "outDir": "package/",
+        "sourceMap": true
+    },
+    "include": [
+        "src/index.ts"
+    ]
+}

@@ -1,0 +1,28 @@
+{
+  "name": "tscodegendsl",
+  "version": "0.0.1",
+  "description": "TypeScript codegen DSL",
+  "main": "index.ts",
+  "author": "Laurence Dougal Myers <laurencedougalmyers@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint . --ext .ts",
+    "package": "rimraf ./package && tsc -p tsconfig_package.json && ts-node tools/package.ts",
+    "publish:npm": "yarn lint && yarn test && yarn package && cd package && yarn publish --non-interactive --access public",
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "@types/app-root-path": "1.2.4",
+    "@types/mocha": "7.0.2",
+    "@types/node": "14.0.13",
+    "@typescript-eslint/eslint-plugin": "3.2.0",
+    "@typescript-eslint/parser": "3.2.0",
+    "app-root-path": "3.0.0",
+    "eslint": "7.2.0",
+    "eslint-plugin-unused-imports": "0.1.3",
+    "mocha": "7.2.0",
+    "rimraf": "3.0.2",
+    "ts-node": "8.10.2",
+    "typescript": "^3.9.5"
+  }
+}
