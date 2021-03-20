@@ -149,7 +149,9 @@ export class CodegenAstWalker {
 						this.sb += ', ';
 						break;
 					case NodeSeperator.Newline:
-						this.newline();
+						if (node.type !== NodeType.NewLine) {
+							this.newline();
+						}
 						break;
 					default:
 						throw assertNever(seperator);
