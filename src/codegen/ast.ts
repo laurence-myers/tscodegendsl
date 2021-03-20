@@ -35,7 +35,7 @@ export interface ArrowFunctionExpressionNode {
 
 export interface BodyNode {
 	type: NodeType.Body;
-	statements: StatementNode[];
+	statements: (StatementNode | NewLineNode)[];
 }
 
 export interface ClassConstructorNode {
