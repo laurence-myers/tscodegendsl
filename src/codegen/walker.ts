@@ -17,6 +17,7 @@ import {
 	LiteralNode,
 	ModuleNode,
 	NamedImportNode,
+	NewLineNode,
 	NodeType,
 	ObjectNode,
 	ObjectPropertyNode,
@@ -112,6 +113,8 @@ export class CodegenAstWalker {
 				return this.walkModule(node);
 			case NodeType.NamedImport:
 				return this.walkNamedImport(node);
+			case NodeType.NewLine:
+				return this.walkNewLine(node);
 			case NodeType.Object:
 				return this.walkObject(node);
 			case NodeType.ObjectProperty:
@@ -373,6 +376,10 @@ export class CodegenAstWalker {
 			this.sb += ' as ';
 			this.sb += node.alias;
 		}
+	}
+
+	private walkNewLine(_node: NewLineNode) {
+		this.newline();
 	}
 
 	private walkObject(node: ObjectNode) {

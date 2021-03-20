@@ -16,6 +16,7 @@ import {
 	LiteralNode,
 	ModuleNode,
 	NamedImportNode,
+	NewLineNode,
 	NodeType,
 	ObjectNode,
 	ObjectPropertyNode,
@@ -243,6 +244,12 @@ export function namedImport(name: NamedImportNode['name'], alias?: NamedImportNo
 		type: NodeType.NamedImport,
 		name,
 		alias
+	};
+}
+
+export function newLine(): NewLineNode {
+	return {
+		type: NodeType.NewLine
 	};
 }
 

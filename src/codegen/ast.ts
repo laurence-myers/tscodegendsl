@@ -16,6 +16,7 @@ export enum NodeType {
 	Literal,
 	Module,
 	NamedImport,
+	NewLine,
 	Object,
 	ObjectProperty,
 	Parameter,
@@ -146,6 +147,10 @@ export interface NamedImportNode {
 	alias?: string;
 }
 
+export interface NewLineNode {
+	type: NodeType.NewLine;
+}
+
 export interface ObjectNode {
 	type: NodeType.Object;
 	properties: ObjectPropertyNode[];
@@ -213,6 +218,7 @@ export type CodegenAstNode = (
 	| LiteralNode
 	| ModuleNode
 	| NamedImportNode
+	| NewLineNode
 	| ObjectNode
 	| ObjectPropertyNode
 	| ParameterNode
